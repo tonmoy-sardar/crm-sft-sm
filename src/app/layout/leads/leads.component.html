@@ -33,10 +33,18 @@
                                 <td>test</td>
                                 <td>test</td>
                                 <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
                                 </td>
                                 <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
                                 </td>
                             </tr>
                             <tr>
@@ -51,10 +59,18 @@
                                 <td>test</td>
                                 <td>test</td>
                                 <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
                                 </td>
                                 <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
                                 </td>
                             </tr>
                             <tr>
@@ -69,28 +85,18 @@
                                 <td>test</td>
                                 <td>test</td>
                                 <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
                                 </td>
                                 <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><div class="counts bg-success">0</div></td>
-                                <td><i class="fa fa-exclamation" aria-hidden="true"></i></td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
-                                </td>
-                                <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
                                 </td>
                             </tr>
                             <tr>
@@ -105,28 +111,18 @@
                                 <td>test</td>
                                 <td>test</td>
                                 <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
                                 </td>
                                 <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><div class="counts bg-success">0</div></td>
-                                <td><i class="fa fa-exclamation" aria-hidden="true"></i></td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
-                                </td>
-                                <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
                                 </td>
                             </tr>
                             <tr>
@@ -141,28 +137,18 @@
                                 <td>test</td>
                                 <td>test</td>
                                 <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
                                 </td>
                                 <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><div class="counts bg-success">0</div></td>
-                                <td><i class="fa fa-exclamation" aria-hidden="true"></i></td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
-                                </td>
-                                <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
                                 </td>
                             </tr>
                             <tr>
@@ -177,28 +163,18 @@
                                 <td>test</td>
                                 <td>test</td>
                                 <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
                                 </td>
                                 <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><div class="counts bg-success">0</div></td>
-                                <td><i class="fa fa-exclamation" aria-hidden="true"></i></td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
-                                </td>
-                                <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
                                 </td>
                             </tr>
                             <tr>
@@ -213,28 +189,18 @@
                                 <td>test</td>
                                 <td>test</td>
                                 <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
                                 </td>
                                 <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><div class="counts bg-success">0</div></td>
-                                <td><i class="fa fa-exclamation" aria-hidden="true"></i></td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>test</td>
-                                <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
-                                </td>
-                                <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
                                 </td>
                             </tr>
                             <tr>
@@ -249,10 +215,148 @@
                                 <td>test</td>
                                 <td>test</td>
                                 <td>
-                                    <a><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
                                 </td>
                                 <td>
-                                    <a><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-success">0</div></td>
+                                <td><i class="fa fa-exclamation" aria-hidden="true"></i></td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-success">0</div></td>
+                                <td><i class="fa fa-exclamation" aria-hidden="true"></i></td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-success">0</div></td>
+                                <td><i class="fa fa-exclamation" aria-hidden="true"></i></td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-success">0</div></td>
+                                <td><i class="fa fa-exclamation" aria-hidden="true"></i></td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="counts bg-success">0</div></td>
+                                <td><i class="fa fa-exclamation" aria-hidden="true"></i></td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu"><i class="fa fa-pencil-square-o table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu="matMenu">
+                                        <button mat-menu-item>Item 1</button>
+                                        <button mat-menu-item>Item 2</button>
+                                      </mat-menu>
+                                </td>
+                                <td>
+                                    <a [matMenuTriggerFor]="menu2"><i class="fa fa-plus table-action-icon" aria-hidden="true"></i></a>
+                                    <mat-menu #menu2="matMenu">
+                                        <button (click)="addTask()" mat-menu-item>Add Task</button>
+                                        <button (click)="addOpportunity()" mat-menu-item>Add Oportunity</button>
+                                      </mat-menu>
                                 </td>
                             </tr>
                         </tbody>

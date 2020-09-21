@@ -75,6 +75,8 @@ import { AscendingPipe } from './pipes/ascending.pipe';
 import { ConfigComponent } from './components/config/config.component';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { BelowTopNavComponent } from './components/below-top-nav/below-top-nav.component';
+import { AddTaskModalComponent } from './components/add-task-modal/add-task-modal.component';
+import { AddOpportunityModalComponent } from './components/add-opportunity-modal/add-opportunity-modal.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +97,8 @@ import { BelowTopNavComponent } from './components/below-top-nav/below-top-nav.c
     ConfigComponent,
     TopNavComponent,
     BelowTopNavComponent,
+    AddTaskModalComponent,
+    AddOpportunityModalComponent,
   ],
   imports: [
     CommonModule,
@@ -160,7 +164,9 @@ import { BelowTopNavComponent } from './components/below-top-nav/below-top-nav.c
     ConfigComponent
   ],
   entryComponents: [
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    AddTaskModalComponent,
+    AddOpportunityModalComponent,
   ]
 })
 export class CoreModule {

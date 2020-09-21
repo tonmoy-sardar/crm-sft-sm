@@ -4464,9 +4464,9 @@ border-bottom-left-radius:.25rem
 .close {
 	float: right;
 	font-size: 1.5rem;
-	font-weight: 700;
+	font-weight: 400;
 	line-height: 1;
-	color:#f90808;
+	color:#ced4da;
 	text-shadow: 0 1px 0 #fff;
 	opacity: .5
 }
@@ -4474,7 +4474,7 @@ border-bottom-left-radius:.25rem
 	cursor: pointer
 }
 .close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover {
-	color: #f90808;
+	color: #ced4da;
 	text-decoration: none;
 	opacity: .75
 }
@@ -4491,10 +4491,7 @@ button.close {
 	overflow-x: hidden;
 	overflow-y: auto
 }
-.modal-title {
-    font-weight: 500;
-    font-size: 17px;
-}
+
 .modal {
 	position: fixed;
 	top: 0;
@@ -4550,11 +4547,16 @@ height:calc(100vh - (.5rem * 2));
 	pointer-events: auto;
 	background-color: #fff;
 	background-clip: padding-box;
-	border: 1px solid rgba(0,0,0,.2);
-border-radius:.3rem;
+	border: 1px solid #e9ecef;
+	border-radius:.3rem;
 	outline: 0
 }
-
+.modal-body-container {
+    background: #F8F8F8;
+    padding: 16px 16px;
+    border: 1px solid #e9ecef;
+    border-radius: 0.3em;
+}
 .modal-content label{
 	font-weight: 400;
 }
@@ -4581,19 +4583,18 @@ border-radius:.3rem;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	padding: 7px 17px;
-	border-bottom: 1px solid #e9ecef;
-	border-top-left-radius:.3rem;
-	border-top-right-radius:.3rem;
-	background: #4ec7ff;
-	color: #fff;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+	color: #393333;
 }
 .modal-header .close {
 	padding: 1rem;
 	margin: -1rem -1rem -1rem auto
 }
 .modal-title {
-	margin-bottom: 0;
-	line-height: 1.5
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-weight: 600;
+    font-size: 15px;
 }
 .modal-body {
 	position: relative;
@@ -12457,7 +12458,7 @@ padding-bottom:.38rem
 .btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
 	-webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
 	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
-	background-color: #1babed !important;
+	background-color: #2A3F54 !important;
 }
 .btn[_ngcontent-c8] {
     padding: 3px 28px !important;
@@ -12517,7 +12518,7 @@ padding-bottom:.38rem
 .btn-danger:not([disabled]):not(.disabled).active, .btn-danger:not([disabled]):not(.disabled):active, .show>.btn-danger.dropdown-toggle {
 	-webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
 	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
-	background-color: #ce0012!important
+	background-color: #fff!important
 }
 .btn-danger:not([disabled]):not(.disabled).active:focus, .btn-danger:not([disabled]):not(.disabled):active:focus, .show>.btn-danger.dropdown-toggle:focus {
 	-webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);

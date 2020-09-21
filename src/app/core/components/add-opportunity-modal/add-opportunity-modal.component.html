@@ -1,0 +1,217 @@
+<loading [state]="loading">
+    <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Add Opportunity</h4>
+      <button type="button" class="close" (click)="close(false)">×</button>
+    </div>
+    <!-- Modal body -->
+    <div class="modal-body custom-scroll" style="max-height: 550px; overflow-y: auto;padding:1rem !important">
+        <div class="modal-body-container">
+      <form [formGroup]="form">
+        <div class="row">
+          <div class="col-sm-4 col-xs-4">
+            <label>Business Name :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="business_name" placeholder=""
+                [ngClass]="displayFieldCss(form,'business_name')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'business_name')">Please Enter Business Name</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>CIN :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="cin" placeholder=""
+                [ngClass]="displayFieldCss(form,'cin')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'cin')">Please Enter CIN</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>PAN :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="pan" placeholder=""
+                [ngClass]="displayFieldCss(form,'pan')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'pan')">Please Enter PAN</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>GSTIN :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="gstin" placeholder=""
+                [ngClass]="displayFieldCss(form,'gstin')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'gstin')">Please Enter GSTIN</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Opportunity Name :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="opportunity" placeholder=""
+                [ngClass]="displayFieldCss(form,'opportunity')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'opportunity')">Please Enter Opportunity Name</div>
+            </div>
+          </div>
+          
+          <div class="col-sm-4 col-xs-4">
+            <label>Opportunity Date :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="opportunity_date" placeholder="DD/MM/YYYY"
+                [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1"
+                [ngClass]="displayFieldCss(form,'opportunity_date')" (dateTimeChange)="formatHandler()">
+                <i class="fa fa-calendar icon-on-input" aria-hidden="true" style="right: 15px;"></i>
+
+              <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'opportunity_date')">Please Opportunity Date</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Expected Closure Date :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="closure_date" placeholder="DD/MM/YYYY"
+                [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2"
+                [ngClass]="displayFieldCss(form,'closure_date')">
+                <i class="fa fa-calendar icon-on-input" aria-hidden="true" style="right: 15px;"></i>
+              <owl-date-time #dt2 [pickerType]="'calendar'"></owl-date-time>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'closure_date')">Please Select Closure Date</div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-xs-4">
+            <label>Engearment :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="engearment" 
+                [ngClass]="displayFieldCss(form,'engearment')" placeholder="Please select">
+                    <ng-option>Fixed Cost</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'engearment')">Please Select Engearment</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Department :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="department" [multiple]="true"
+                [ngClass]="displayFieldCss(form,'department')" placeholder="Please select">
+                    <ng-option>Fixed Cost</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'department')">Please Select Department</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Technology :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="technology" placeholder=""
+                [ngClass]="displayFieldCss(form,'technology')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'technology')">Please Enter Technology</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Business URL :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="business_url" placeholder=""
+                [ngClass]="displayFieldCss(form,'business_url')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'business_url')">Please Enter Business URL</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Man Hours :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="man_hours" placeholder="" appNumber
+                [ngClass]="displayFieldCss(form,'man_hours')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'man_hours')">Please Enter Man Hours</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Value :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="value" placeholder=""
+                [ngClass]="displayFieldCss(form,'value')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'value')">Please Enter Value</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <label>Currency :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="currency"
+                [ngClass]="displayFieldCss(form,'currency')" placeholder="Please select Currency">
+                    <ng-option>Fixed Cost</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'currency')">Please Select Currency</div>
+            </div>
+          </div>
+
+        </div>
+          
+      </form>
+    </div>
+
+    <div class="modal-body-container" style="margin-top: 15px;">
+        <div class="row">
+            <div class="col-sm-3 col-xs-3">
+                <label><b>POC Name</b></label>
+            </div>
+            <div class="col-sm-3 col-xs-3">
+                <label><b>Email ID</b></label>
+            </div>
+            <div class="col-sm-3 col-xs-3">
+                <label><b>Contact Number</b></label>
+            </div>
+            <div class="col-sm-3 col-xs-3">
+                <label><b>Job Title</b></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 col-xs-3">
+                <label>Bubai DAs</label>
+            </div>
+            <div class="col-sm-3 col-xs-3">
+                <label>test@test.com</label>
+            </div>
+            <div class="col-sm-3 col-xs-3">
+                <label>999 999 9999</label>
+            </div>
+            <div class="col-sm-3 col-xs-3">
+                <label>PEO</label> <span class="rid-row"><i class="fa fa-minus-circle" aria-hidden="true"></i>
+                </span>
+            </div>
+
+            <div class="col-sm-12 col-xs-12 text-right">
+                <button class="btn btn-primary blue-btn">ADD NEW POC</button>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 15px;">
+        <div class="col-sm-12 col-xs-12 text-center">
+          <button type="button" class="btn btn-primary modal-save-btn" (click)="submit()">SAVE</button>
+          <button type="button" class="btn btn-danger modal-cancel-btn" (click)="close(false)">CANCEL</button>
+        </div>
+      </div> 
+    </div>
+  </div>
+  </loading>

@@ -560,3 +560,41 @@ i.fa.fa-plus.table-action-icon {
     font-size: 17px;
     
 }
+.mat-menu-content .mat-menu-item{
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+}
+button.modal-save-btn {
+    padding: 4px 20px;
+    border-radius: .4em;
+}
+button.modal-cancel-btn {
+    padding: 3px 10px;
+    border-radius: .4em;
+    background: #fff !important;
+    color: #F04632 !important;
+    border: 1px solid #F04632;
+}
+.icon-on-input{
+    position: absolute;
+    top: 0px;
+    background: #138BC6;
+    color: #fff;
+    line-height: 28px;
+    padding: 0 8px;
+    right: 0;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+.cdk-overlay-dark-backdrop {
+    background: rgba(0,0,0,.9);
+}
+span.rid-row {
+    color: #F04632;
+    margin-left: 10px;
+}
+button.blue-btn {
+    background: #1188C2 !important;
+    border-radius: .5em;
+}
