@@ -10,6 +10,9 @@ const routes: Routes = [
       { path: '', redirectTo: 'leads', pathMatch: 'full' },
       { path: '/', redirectTo: 'leads', pathMatch: 'full' },
       { path: 'leads',  loadChildren: () => import('./leads/leads.module').then(m => m.LeadsModule) },
+      { path: 'accounts', loadChildren: () => import('./accounts/accounts.module').then(m => m.AccountsModule) },
+      { path: 'close_won', loadChildren: () => import('./close-won/close-won.module').then(m => m.CloseWonModule) },
+      { path: 'loss_analysis', loadChildren: () => import('./loss-analysis/loss-analysis.module').then(m => m.LossAnalysisModule) }
     ]
   }
 ];
