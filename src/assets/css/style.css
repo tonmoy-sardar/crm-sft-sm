@@ -18,6 +18,10 @@ body {   overflow-x: hidden;
 	font-weight: 600;
 	text-transform: uppercase;
 }
+
+.dashboard {
+    margin-bottom: 60px;
+}
 	
 .product-Section .testimonial-card .card-up {
     height: 100px;
@@ -39,6 +43,12 @@ body {   overflow-x: hidden;
     width: 37px;
     height: 37px;
     }
+.page-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
 .topsearch{
     margin: 0px 0px 2% 0px;
     padding: 0px 0px;
@@ -597,4 +607,28 @@ span.rid-row {
 button.blue-btn {
     background: #1188C2 !important;
     border-radius: .5em;
+}
+
+.accounts .pocblock {
+    text-align: center;  
+    border: 0px;  
+    /* background-color: #dee2e6; */
+}
+.accounts .pocblock button {
+    border:  #2A3F54 1px solid;
+    border-radius: 5px;
+    color: #2A3F54;
+    padding: 5px;
+    font-size: 10px;
+}
+.accounts .pocblock td {
+    border: 0px;
+}
+.accounts table td a.link {
+    color: #33b5e5;
+    font-weight: bold;
+}
+.accounts .accountrow {
+    text-align: left;
+    background-color: #33b5e578;
 }
