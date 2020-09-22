@@ -5,39 +5,35 @@ import { LoadingState } from '../../../core/components/loading/loading.component
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-add-task-modal',
-  templateUrl: './add-task-modal.component.html',
-  styleUrls: ['./add-task-modal.component.scss']
+  selector: 'app-add-poc-modal',
+  templateUrl: './add-poc-modal.component.html',
+  styleUrls: ['./add-poc-modal.component.scss']
 })
-export class AddTaskModalComponent implements OnInit {
+export class AddPocModalComponent implements OnInit {
 
   form: FormGroup;
   loading: LoadingState = LoadingState.NotReady;
 
   constructor(
-    public dialogRef: MatDialogRef<AddTaskModalComponent>,
+    public dialogRef: MatDialogRef<AddPocModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder,
   ) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      task_name: [null, Validators.required],
-      date: [null, Validators.required],
-      time: [null, Validators.required],
-      remarks: [null, Validators.required]
+      name: [null, Validators.required],
+      email: [null, Validators.required],
+      job_title: [null, Validators.required],
+      contact: [null, Validators.required]
     });
     this.loading = LoadingState.Ready;
   }
 
-  formatHandler( event){
-
+  close(flag){
+    this.dialogRef.close(flag);
   }
 
-  close(key: boolean) {
-    this.dialogRef.close(key);
-  }
-  
   markFormGroupTouched(formGroup: FormGroup) {
     (<any>Object).values(formGroup.controls).forEach(control => {
       control.markAsTouched();
@@ -57,4 +53,5 @@ export class AddTaskModalComponent implements OnInit {
       'is-valid': form.get(field).valid && (form.get(field).dirty || form.get(field).touched)
     };
   }
+
 }

@@ -10,6 +10,6 @@ export class AccountsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
+  } 
 
 }

@@ -56,7 +56,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 // component
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ErrorComponent } from './components/error/error.component';
@@ -77,6 +77,11 @@ import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { BelowTopNavComponent } from './components/below-top-nav/below-top-nav.component';
 import { AddTaskModalComponent } from './components/add-task-modal/add-task-modal.component';
 import { AddOpportunityModalComponent } from './components/add-opportunity-modal/add-opportunity-modal.component';
+import { MyPipelineComponent } from './components/pipeline-tab/my-pipeline/my-pipeline.component';
+import { PipelineSnapshotComponent } from './components/pipeline-tab/pipeline-snapshot/pipeline-snapshot.component';
+import { OpportunityWonModalComponent } from './components/opportunity-won-modal/opportunity-won-modal.component';
+import { OpportunityLostModalComponent } from './components/opportunity-lost-modal/opportunity-lost-modal.component';
+import { AddTaskPipelineModalComponent } from './components/add-task-pipeline-modal/add-task-pipeline-modal.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +104,11 @@ import { AddOpportunityModalComponent } from './components/add-opportunity-modal
     BelowTopNavComponent,
     AddTaskModalComponent,
     AddOpportunityModalComponent,
+    MyPipelineComponent,
+    PipelineSnapshotComponent,
+    OpportunityWonModalComponent,
+    OpportunityLostModalComponent,
+    AddTaskPipelineModalComponent,
   ],
   imports: [
     CommonModule,
@@ -117,6 +127,7 @@ import { AddOpportunityModalComponent } from './components/add-opportunity-modal
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
+    DragDropModule,
     //----------------Material----------------//
     MatAutocompleteModule, MatButtonModule, MatButtonToggleModule,
     MatCardModule, MatCheckboxModule, MatChipsModule, MatStepperModule, MatDatepickerModule,
@@ -147,6 +158,8 @@ import { AddOpportunityModalComponent } from './components/add-opportunity-modal
     ThreeDecimalNumberDirective,
     TopNavComponent,
     BelowTopNavComponent,
+    MyPipelineComponent,
+    PipelineSnapshotComponent,
     //----------------Material----------------//
     MatAutocompleteModule, MatButtonModule, MatButtonToggleModule,
     MatCardModule, MatCheckboxModule, MatChipsModule, MatStepperModule, MatDatepickerModule,
@@ -161,12 +174,15 @@ import { AddOpportunityModalComponent } from './components/add-opportunity-modal
     ItemPerPageFilerComponent,
     OrderByPipe,
     AscendingPipe,
-    ConfigComponent
+    ConfigComponent,
   ],
   entryComponents: [
     ConfirmDialogComponent,
     AddTaskModalComponent,
     AddOpportunityModalComponent,
+    OpportunityWonModalComponent,
+    OpportunityLostModalComponent,
+    AddTaskPipelineModalComponent
   ]
 })
 export class CoreModule {

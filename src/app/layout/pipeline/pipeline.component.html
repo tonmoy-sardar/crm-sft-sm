@@ -1,0 +1,22 @@
+<div class="tab-pane">
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <ngb-tabset #ctdTabset="ngbTabset">
+                <ngb-tab id="my_pipeline">
+                    <ng-template ngbTabTitle>My Pipeline </ng-template>
+                    <ng-template ngbTabContent>
+                            <app-my-pipeline></app-my-pipeline>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab  id="pipeline_snapshot">
+                    <ng-template ngbTabTitle>Pipeline Snapshot </ng-template>
+                    <ng-template ngbTabContent>
+                            <app-pipeline-snapshot></app-pipeline-snapshot>
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </div>
+    </div>
+    </div>
+</div>
