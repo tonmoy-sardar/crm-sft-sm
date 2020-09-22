@@ -82,6 +82,9 @@ import { PipelineSnapshotComponent } from './components/pipeline-tab/pipeline-sn
 import { OpportunityWonModalComponent } from './components/opportunity-won-modal/opportunity-won-modal.component';
 import { OpportunityLostModalComponent } from './components/opportunity-lost-modal/opportunity-lost-modal.component';
 import { AddTaskPipelineModalComponent } from './components/add-task-pipeline-modal/add-task-pipeline-modal.component';
+import { AddPocModalComponent } from './components/add-poc-modal/add-poc-modal.component';
+import { ViewPoclistModalComponent } from './components/view-poclist-modal/view-poclist-modal.component';
+// import { OpportunityDetailsModalComponent } from './components/opportunity-details-modal/opportunity-details-modal.component';
 
 @NgModule({
   declarations: [
@@ -109,6 +112,9 @@ import { AddTaskPipelineModalComponent } from './components/add-task-pipeline-mo
     OpportunityWonModalComponent,
     OpportunityLostModalComponent,
     AddTaskPipelineModalComponent,
+    AddPocModalComponent,
+    ViewPoclistModalComponent,
+    // OpportunityDetailsModalComponent,
   ],
   imports: [
     CommonModule,
@@ -182,7 +188,9 @@ import { AddTaskPipelineModalComponent } from './components/add-task-pipeline-mo
     AddOpportunityModalComponent,
     OpportunityWonModalComponent,
     OpportunityLostModalComponent,
-    AddTaskPipelineModalComponent
+    AddTaskPipelineModalComponent,
+    AddPocModalComponent,
+    ViewPoclistModalComponent,
   ]
 })
 export class CoreModule {
