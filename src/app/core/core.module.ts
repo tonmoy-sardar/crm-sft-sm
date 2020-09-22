@@ -77,6 +77,9 @@ import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { BelowTopNavComponent } from './components/below-top-nav/below-top-nav.component';
 import { AddTaskModalComponent } from './components/add-task-modal/add-task-modal.component';
 import { AddOpportunityModalComponent } from './components/add-opportunity-modal/add-opportunity-modal.component';
+import { AddPocModalComponent } from './components/add-poc-modal/add-poc-modal.component';
+import { ViewPoclistModalComponent } from './components/view-poclist-modal/view-poclist-modal.component';
+// import { OpportunityDetailsModalComponent } from './components/opportunity-details-modal/opportunity-details-modal.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +102,9 @@ import { AddOpportunityModalComponent } from './components/add-opportunity-modal
     BelowTopNavComponent,
     AddTaskModalComponent,
     AddOpportunityModalComponent,
+    AddPocModalComponent,
+    ViewPoclistModalComponent,
+    // OpportunityDetailsModalComponent,
   ],
   imports: [
     CommonModule,
@@ -167,6 +173,8 @@ import { AddOpportunityModalComponent } from './components/add-opportunity-modal
     ConfirmDialogComponent,
     AddTaskModalComponent,
     AddOpportunityModalComponent,
+    AddPocModalComponent,
+    ViewPoclistModalComponent,
   ]
 })
 export class CoreModule {

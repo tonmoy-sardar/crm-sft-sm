@@ -62,7 +62,7 @@ export class TopNavComponent implements OnInit {
 
   goto(item){
     this.router.navigateByUrl('/'+item.link);
-    setTimeout(() => {this.selectNav()}, 250); 
+    setTimeout(() => {this.selectNav()}, 300); 
   }
 
 }
