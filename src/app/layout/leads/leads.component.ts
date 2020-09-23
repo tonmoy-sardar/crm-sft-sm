@@ -22,7 +22,7 @@ export class LeadsComponent implements OnInit {
 
     let dialogRef = this.dialog.open(AddTaskModalComponent, {
       backdropClass: 'popupBackdropClass',
-      width: '525px',
+      width: '525px'
     });
     dialogRef.afterClosed().subscribe(result => {
       if(result == true){

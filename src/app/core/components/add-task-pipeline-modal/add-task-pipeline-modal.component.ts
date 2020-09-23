@@ -5,24 +5,25 @@ import { LoadingState } from '../../../core/components/loading/loading.component
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-add-task-modal',
-  templateUrl: './add-task-modal.component.html',
-  styleUrls: ['./add-task-modal.component.scss']
+  selector: 'app-add-task-pipeline-modal',
+  templateUrl: './add-task-pipeline-modal.component.html',
+  styleUrls: ['./add-task-pipeline-modal.component.scss']
 })
-export class AddTaskModalComponent implements OnInit {
+export class AddTaskPipelineModalComponent implements OnInit {
+
 
   form: FormGroup;
   loading: LoadingState = LoadingState.NotReady;
 
   constructor(
-    public dialogRef: MatDialogRef<AddTaskModalComponent>,
+    public dialogRef: MatDialogRef<AddTaskPipelineModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder,
   ) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      task_name: [null, Validators.required],
+      follow_up: [null, Validators.required],
       date: [null, Validators.required],
       time: [null, Validators.required],
       remarks: [null, Validators.required]
