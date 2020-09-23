@@ -20,7 +20,8 @@ body {   overflow-x: hidden;
 }
 
 .dashboard {
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
+    min-height: 100vh
 }
 	
 .product-Section .testimonial-card .card-up {
@@ -43,12 +44,12 @@ body {   overflow-x: hidden;
     width: 37px;
     height: 37px;
     }
-.page-footer {
+/* .page-footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-}
+} */
 .topsearch{
     margin: 0px 0px 2% 0px;
     padding: 0px 0px;
