@@ -282,7 +282,7 @@ body {   overflow-x: hidden;
 }
 .navbar.navbar-dark .breadcrumb .nav-item .nav-link, .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
     color: #000;
-    font-size: 18px;
+    font-size: 14px;
 }
 .report-tabs .nav-tabs .nav-link {      
     background: #197fe6;
