@@ -1488,7 +1488,6 @@ padding:.3rem;
     white-space: nowrap;
 	font-weight: 600;
 	vertical-align: middle;
-	text-align: center;
 }
  /* .table .thead-dark th {
 	color: #fff;
@@ -1576,7 +1575,8 @@ padding:.3rem;
 	font-size: 13px;
 }
 .table-responsive>.table-bordered {
-	border: 0
+	border: 1px solid #dee2e6;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.08), 0 2px 4px 0 rgba(0,0,0,.12);
 }
 .form-control {
 	display: block;
@@ -3172,100 +3172,6 @@ border-radius:1rem
 	transition: none
 }
 }
-.tender-parent-tab-area .nav {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	padding-left: 0;
-	margin-bottom: 0;
-	list-style: none;	
-    background: #D4D4D4;
-}
-
-.tender-parent-tab-area .nav>li+li:before {
-	padding: 0;
-}
-.tender-parent-tab-area .nav li { 
-	float: left; 
-}
-.tender-parent-tab-area .nav li.active a {               
-	background: #1babed ; 
-}
-.tender-parent-tab-area .nav li.active a:before {
-	border-left: 30px solid #1babed;
-}
-.tender-parent-tab-area .nav li.active a:after {
-	border-left: 30px solid #1babed;
-} 
-
-.tender-parent-tab-area .nav li a {
-	color: #6e6e6e;
-	text-decoration: none; 
-	padding: 10px 14px 10px 34px !important;
-	position: relative; 
-	display: block;
-	float: left;
-}
-.tender-parent-tab-area .nav li a:after { 
-	content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 22px solid transparent;
-    border-bottom: 22px solid transparent;
-    border-left: 11px solid hsla(0, 0%, 83%, 1);
-    position: absolute;
-    top: 50%;
-    margin-top: -22px;
-    left: 100%;
-    z-index: 2;
-}
-
-.tender-parent-tab-area .nav li.active a:before { 
-	content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 22px solid transparent;
-    border-bottom: 22px solid transparent;
-    border-left: #1babed;
-    position: absolute;
-    top: 50%;
-    margin-top: -22px;
-    left: 100%;
-    z-index: 2;
-}
-.tender-parent-tab-area .tab-content .nav li a:after{
-	display: none;
-}
-.tender-parent-tab-area .tab-content .nav li a:before{
-	display: none;
-}	
-.tender-parent-tab-area .nav li a:before { 
-	content: " ";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 22px solid transparent;
-    border-bottom: 22px solid transparent;
-    border-left: 11px solid white;
-    position: absolute;
-    top: 50%;
-    margin-top: -22px;
-    margin-left: 1px;
-    left: 100%;
-    z-index: 1;
-}	
-.tender-parent-tab-area .nav li:first-child a {
-	padding-left: 15px;
-}
-.tender-parent-tab-area .nav li a:hover { background: #1babed  ; color: #fff; }
-.tender-parent-tab-area .nav li a:hover:after { border-left-color: #1babed   !important; }
-
-
-
-
 
 .nav-link {
 	display: block;
@@ -3278,10 +3184,7 @@ padding:.5rem 1rem
 	color: #6c757d
 }
 .nav-tabs {
-	border-bottom: 1px solid #dee2e6
-}
-.nav-tabs .nav-item {
-	margin-bottom: -1px;
+	border-bottom: none
 }
 .nav-tabs .nav-link {
     font-weight: 600;

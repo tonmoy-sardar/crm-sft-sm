@@ -25,9 +25,17 @@ export class AddTaskModalComponent implements OnInit {
       task_name: [null, Validators.required],
       date: [null, Validators.required],
       time: [null, Validators.required],
-      remarks: [null, Validators.required]
+      remarks: [null]
     });
     this.loading = LoadingState.Ready;
+  }
+
+  formSubmit(){
+    if (this.form.valid) {
+
+    } else {
+      this.markFormGroupTouched(this.form)
+    }
   }
 
   formatHandler( event){

@@ -1,26 +1,30 @@
-<div class="container-fluid below-top-bar">
+<div class="container-fluid below-top-bar-lead">
     <div class="row">
-        <div class="col-lg-4">
-            <form >
+        <div class="col-lg-8">
+                <!-- <form (ngSubmit)="submit()">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for a lead" aria-label="Search">
+                    <input class="form-control" type="text" placeholder="Search for a lead" [(ngModel)]="search_key" [ngModelOptions]="{standalone: true}">
                     <span class="input-group-btn">
-                        <button class="btn btn-primary top-form-btn" type="submit">Search</button>
+                        <button class="btn btn-primary top-form-btn" type="submit" >Search</button>
                       </span>
                 </div>
-            </form>
-
+                </form> -->
         </div>
-        <div class="col-lg-3">
-            <ng-select class="form-control form-control2 top-search" placeholder="Please Select">
-                <ng-option>Test</ng-option>
+        <div class="col-lg-2 text-right" *ngIf="currentTab == 'my_pipeline' || currentTab == 'pipeline_snapshot'">
+            
+        </div>              
+        <div class="col-lg-4  text-right" *ngIf="currentTab == 'lead_pool'">
+            <button (click)="addLead()" class="btn main-btn btn-primary">Add Lead</button>
+            <button (click)="assignLead()" class="btn main-btn btn-primary">Assign Lead</button>
+        </div>
+        <div class="col-lg-2 text-right" *ngIf="currentTab == 'assigned_leads'">
+            <button (click)="addLead()" class="btn main-btn btn-primary">Add Lead</button>
+        </div> 
+        <div class="col-lg-2 team-members" *ngIf="currentTab !== 'lead_pool'">
+            <ng-select class="form-control form-control2 top-search" [(ngModel)]="selectedEmployee" placeholder="Select Employee" [clearable]="false">
+                <ng-option value="all">All</ng-option>
+                <ng-option value="Madhuparna">Madhuparna</ng-option>
             </ng-select>
-        </div>
-        <div class="col-lg-2  text-center">
-            <button class="btn btn-primary">Add Lead</button>
-        </div>
-        <div class="col-lg-3 text-right">
-            <button class="btn btn-primary">Send it back to the Lead Pool</button>
-        </div>
+        </div>        
     </div>
 </div>

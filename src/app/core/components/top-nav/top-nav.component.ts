@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 
 @Component({
   selector: 'app-top-nav',
@@ -15,9 +15,23 @@ export class TopNavComponent implements OnInit {
     private router:Router,
     private route:ActivatedRoute
   ) {
-    // this.router.events.subscribe((res) => { 
-    //   console.log(this.router.url,"Current URL");
-    // })
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) {
+          // Show loading indicator
+      }
+
+      if (event instanceof NavigationEnd) {
+          // Hide loading indicator
+          this.selectNav()
+      }
+
+      if (event instanceof NavigationError) {
+          // Hide loading indicator
+
+          // Present error to user
+          // console.log(event.error);
+      }
+  });
     
    }
 
@@ -52,15 +66,20 @@ export class TopNavComponent implements OnInit {
         title: 'Loss Analysis',
         icon: 'fa fa-line-chart',
         selected: false
+      },
+      {
+        link: 'report',
+        title: 'Report',
+        icon: 'fa fa-file-text-o',
+        selected: false
       }
     ];
     this.selectNav()
   }
 
   selectNav(){   
-    // console.log(this.route.snapshot.firstChild.url[0].path)
-    ////////////////////////////////// 
-    var nav = this.router.url.substr(1)    
+    // console.log(this.router.url.substr(1))    
+    var nav = this.route.snapshot.firstChild.url[0].path   
     // console.log(nav)
     this.navList.forEach(element => {
       if(element.link == nav) element.selected = true;
@@ -69,12 +88,7 @@ export class TopNavComponent implements OnInit {
   }
 
   goto(item){
-    this.router.navigateByUrl('/'+item.link);
-    setTimeout(() => {this.selectNav()}, 300); 
-  }
-
-  goToMenu(item) {
-    this.selectedItem = item;
+    this.router.navigateByUrl('/'+item.link);    
   }
 
 }

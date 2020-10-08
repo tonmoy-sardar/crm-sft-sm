@@ -4,10 +4,9 @@
 
 export const environment = {
   production: true,
-  //apiEndpoint: 'http://192.168.25.118:8000/',
-  //imageURL: 'http://192.168.25.118:8000/media/',
   apiEndpoint: 'http://125.22.105.181:11113/',
-  imageURL: 'http://125.22.105.181:11113/media/',
+  apiEndpointCRM: 'http://125.22.105.181:11113/crm/',
+  imageURL: 'http://125.22.105.181:11113/crm/media/',
   firebase: {
     apiKey: "AIzaSyDzLbKnKie9jagNn9Up1_dzHGdeGD1Wo8E",
     authDomain: "ssilweb.firebaseapp.com",

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-opportunity-won-modal',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpportunityWonModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    public dialogRef: MatDialogRef<OpportunityWonModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+  ) { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.close(false);
+      this.router.navigate(['/project-form']);
+    }, 5000); 
+  }
+
+  close(key: boolean) {
+    this.dialogRef.close(key);
   }
 
 }

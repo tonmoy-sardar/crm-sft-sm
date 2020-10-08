@@ -42,14 +42,14 @@
           </div>
           <div class="col-sm-9 col-xs-9">
             <div class="form-group">
-              <input class="form-control" formControlName="contact" placeholder="Contact Number" [ngClass]="displayFieldCss(form,'contact')">
-            <div class="invalid-feedback" *ngIf="isFieldValid(form,'contact')">Please Enter Contact Number</div>
+              <input class="form-control" formControlName="phone" placeholder="Contact Number" [ngClass]="displayFieldCss(form,'phone')">
+            <div class="invalid-feedback" *ngIf="isFieldValid(form,'phone')">Please Enter Contact Number</div>
             </div>
           </div>  
         </div>
           
         <div class="row">
-          <div class="col-sm-12 col-xs-12 text-center">
+          <div class="col-sm-12 col-xs-12 text-right">
             <button type="button" class="btn btn-primary modal-save-btn" (click)="submit()">SAVE</button>
             <button type="button" class="btn btn-danger modal-cancel-btn" (click)="close(false)">CANCEL</button>
           </div>

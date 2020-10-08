@@ -4,6 +4,9 @@ import { OpportunityLostModalComponent } from '../../opportunity-lost-modal/oppo
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {CdkDragDrop, moveItemInArray, transferArrayItem, CdkDragStart} from '@angular/cdk/drag-drop';
 import { AddTaskPipelineModalComponent } from '../../add-task-pipeline-modal/add-task-pipeline-modal.component';
+import { AddToPresalesModalComponent } from '../../add-to-presales-modal/add-to-presales-modal.component';
+import { ShowTaskModalComponent } from '../../show-task-modal/show-task-modal.component';
+import { EditTilesModalComponent } from '../../edit-tiles-modal/edit-tiles-modal.component';
 
 @Component({
   selector: 'app-my-pipeline',
@@ -67,7 +70,32 @@ export class MyPipelineComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    console.log(event)
+        
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(event.previousContainer.data,
+                        event.container.data,
+                        event.previousIndex,
+                        event.currentIndex);
+  
+      if(event.previousContainer.id == 'requirements' && event.container.id == 'presales'){
+        let dialogRef = this.dialog.open(AddToPresalesModalComponent, {
+          width: '620px',
+        });
+        dialogRef.afterClosed().subscribe(result => {
+          if(result == true){
+          }
+        })
+      }
+
+    }
+  
+    this.showWonLost = false
+  }
+
+  wonDrop(event: CdkDragDrop<string[]>){
+
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -78,9 +106,7 @@ export class MyPipelineComponent implements OnInit {
     }
 
     this.showWonLost = false
-  }
-
-  wonDrop(event: CdkDragDrop<string[]>){
+    
     let dialogRef = this.dialog.open(OpportunityWonModalComponent, {
       width: '525px',
     });
@@ -89,6 +115,9 @@ export class MyPipelineComponent implements OnInit {
       }
     })
 
+  }
+
+  lostDrop(event: CdkDragDrop<string[]>){
 
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -99,9 +128,7 @@ export class MyPipelineComponent implements OnInit {
                         event.currentIndex);
     }
     this.showWonLost = false
-  }
 
-  lostDrop(event: CdkDragDrop<string[]>){
     let dialogRef = this.dialog.open(OpportunityLostModalComponent, {
       width: '525px',
     });
@@ -109,22 +136,34 @@ export class MyPipelineComponent implements OnInit {
       if(result == true){
       }
     })
-
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
-                        event.container.data,
-                        event.previousIndex,
-                        event.currentIndex);
-    }
-    this.showWonLost = false
   }
   
   addTask(){
     let dialogRef = this.dialog.open(AddTaskPipelineModalComponent, {
       backdropClass: 'popupBackdropClass',
       width: '525px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result == true){
+      }
+    })
+  }
+
+  showTask(){
+    let dialogRef = this.dialog.open(ShowTaskModalComponent, {
+      backdropClass: 'popupBackdropClass',
+      width: '380px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result == true){
+      }
+    })
+  }
+
+  editTask(){
+    let dialogRef = this.dialog.open(EditTilesModalComponent, {
+      backdropClass: 'popupBackdropClass',
+      width: '380px',
     });
     dialogRef.afterClosed().subscribe(result => {
       if(result == true){

@@ -1,0 +1,35 @@
+<loading [state]="loading">
+    <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Assign Lead(s) to Team Member</h4>
+      <button type="button" class="close" (click)="close(false)">×</button>
+    </div>
+    <!-- Modal body -->
+    <div class="modal-body">
+        <div class="modal-body-container">
+      <form [formGroup]="form">
+        <div class="row">       
+          <div class="col-sm-12 col-xs-12">
+            <div class="form-group">
+                <ng-select class="form-control form-control2 top-search" formControlName="team_member" placeholder="Select Team Member" [ngClass]="displayFieldCss(form,'team_member')">
+                    <ng-option>Madhuparna</ng-option>
+                    <ng-option>Gurpreet</ng-option>
+                </ng-select>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'team_member')">Please Select Team Member</div>
+            </div>
+          </div>
+          
+        </div>
+          
+        <div class="row">
+          <div class="col-sm-12 col-xs-12 text-right">
+            <button type="button" class="btn btn-primary modal-save-btn" (click)="submit()">SAVE</button>
+            <button type="button" class="btn btn-danger modal-cancel-btn" (click)="close(false)">CANCEL</button>
+          </div>
+        </div> 
+      </form>
+    </div>
+    </div>
+  </div>
+  </loading>

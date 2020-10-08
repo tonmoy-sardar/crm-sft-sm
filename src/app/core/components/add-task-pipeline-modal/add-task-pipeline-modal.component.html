@@ -1,6 +1,11 @@
 <loading [state]="loading">
     <div class="modal-content">
-   
+   <!-- Modal Header -->
+   <div class="modal-header">
+    <h4 class="modal-title">Add Task</h4>
+    <button type="button" class="close" (click)="close(false)">×</button>
+  </div>
+  <!-- Modal body -->
     <!-- Modal body -->
     <div class="modal-body">
         <div class="modal-body-container-simple">
@@ -59,7 +64,7 @@
         </div>
           
         <div class="row">
-          <div class="col-sm-12 col-xs-12 text-center">
+          <div class="col-sm-12 col-xs-12 text-right">
             <button type="button" class="btn btn-primary modal-save-btn" (click)="submit()">SAVE</button>
             <button type="button" class="btn btn-danger modal-cancel-btn" (click)="close(false)">CANCEL</button>
           </div>

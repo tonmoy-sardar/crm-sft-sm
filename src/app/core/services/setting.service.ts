@@ -160,14 +160,6 @@ export class SettingService {
     return permissionLevel;
   }
 
-  getApprovalPermissionLevel(params): Observable<any> {
-    return this.http.get(environment.apiEndpoint + 'approval_permission_list/?' + params, this.httpHeaderOptions)
-  }
-
-  getEmployeeListWithOutDetails(params) {
-    return this.http.get(environment.apiEndpoint + 'employee_list_without_details/?' + params, this.httpHeaderOptions);
-  }
-
   getRandomLightColor() {
 		var letters = 'BCDEF'.split('');
 		var color = '#';
@@ -181,7 +173,94 @@ export class SettingService {
 		  return colorObj;
 	  }
 
-    getTaskAssignUserList(): Observable<any> {
-      return this.http.get(environment.apiEndpoint+'employee_list_without_details_for_e_task/?page_size=0&team_approval_flag=1',this.httpHeaderOptions);
+   validURLRegex() {
+      var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+      return pattern;
     }
+
+    validateCINRegex(){
+      const pattern = /^(?=(?:[a-z0-9]*[a-z]))(?=(?:[a-z0-9]*[0-9]){3})[a-z0-9]{21,}$/i; //21 digit alphanumeric
+      return pattern
+    }
+
+    validateGSTINRegex(){
+      const pattern = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/ //sample 29AAGCB7383J1Z4
+      return pattern;
+    }
+
+    validatePANRegex(){
+      const pattern = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/ 
+      return pattern;
+    }
+  
+    // MasterTable Managers Start ////
+    getDepartments(params){
+      return this.http.get(environment.apiEndpoint+'crm/department_add_or_list/?'+params,this.httpHeaderOptions);
+    }
+
+    addDepartment(data) {
+      return this.http.post(environment.apiEndpoint + 'crm/department_add_or_list/', data, this.httpHeaderOptions);
+    }
+
+    editDepartment(id, data) {
+      return this.http.put(environment.apiEndpoint + 'crm/department_edit/'+id+'/', data, this.httpHeaderOptions);
+    }
+
+    deleteDepartment(id) {
+      return this.http.put(environment.apiEndpoint + 'crm/department_delete/'+id+'/', this.httpHeaderOptions);
+    }
+
+    getTechnologies(params){
+      return this.http.get(environment.apiEndpoint+'crm/technology_add_or_list/?'+params,this.httpHeaderOptions);
+    }
+
+    addTechnology(data) {
+      return this.http.post(environment.apiEndpoint + 'crm/technology_add_or_list/', data, this.httpHeaderOptions);
+    }
+
+    editTechnology(id, data) {
+      return this.http.put(environment.apiEndpoint + 'crm/technology_edit/'+id+'/', data, this.httpHeaderOptions);
+    }
+
+    deleteTechnology(id) {
+      return this.http.put(environment.apiEndpoint + 'crm/technology_delete/'+id+'/', this.httpHeaderOptions);
+    }
+
+    getSources(params){
+      return this.http.get(environment.apiEndpoint+'crm/source_add_or_list/?'+params,this.httpHeaderOptions);
+    }
+
+    addSource(data) {
+      return this.http.post(environment.apiEndpoint + 'crm/source_add_or_list/', data, this.httpHeaderOptions);
+    }
+
+    editSource(id, data) {
+      return this.http.put(environment.apiEndpoint + 'crm/source_edit/'+id+'/', data, this.httpHeaderOptions);
+    }
+
+    deleteSource(id) {
+      return this.http.put(environment.apiEndpoint + 'crm/source_delete/'+id+'/', this.httpHeaderOptions);
+    }
+
+    getDomains(params){
+      return this.http.get(environment.apiEndpoint+'t_core_domain_add_or_list/?'+params,this.httpHeaderOptions);
+    }
+
+    addDomain(data) {
+      return this.http.post(environment.apiEndpoint + 't_core_domain_add_or_list/', data, this.httpHeaderOptions);
+    }
+
+    editDomain(id, data) {
+      return this.http.put(environment.apiEndpoint + 't_core_domain_edit/'+id+'/', data, this.httpHeaderOptions);
+    }
+
+    deleteDomain(id) {
+      return this.http.put(environment.apiEndpoint + 't_core_domain_delete/'+id+'/', this.httpHeaderOptions);
+    }
+    // MasterTable Managers End ////
 }

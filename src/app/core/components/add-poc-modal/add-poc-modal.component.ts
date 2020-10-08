@@ -24,14 +24,27 @@ export class AddPocModalComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: [null, Validators.required],
       email: [null, Validators.required],
-      job_title: [null, Validators.required],
-      contact: [null, Validators.required]
+      job_title: [null],   /**  As described on page 16 **/
+      phone: [null, [Validators.required, Validators.minLength(10),Validators.required,Validators.maxLength(12)]]
     });
     this.loading = LoadingState.Ready;
   }
 
-  close(flag){
-    this.dialogRef.close(flag);
+  submit(){
+    if(this.form.valid){
+      this.close(true,this.form.value)
+    }else{
+      this.markFormGroupTouched(this.form)
+    }
+  }
+
+  close(flag, data?){
+    if(flag == false){
+      this.dialogRef.close(flag);
+    }else{
+      this.dialogRef.close(data);
+    }
+    
   }
 
   markFormGroupTouched(formGroup: FormGroup) {

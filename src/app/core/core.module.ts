@@ -11,6 +11,7 @@ import { OwlDateTimeModule } from 'ng-pick-datetime';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
 // guard
 import { AuthGuard } from './guards/auth.guard';
 
@@ -84,7 +85,12 @@ import { OpportunityLostModalComponent } from './components/opportunity-lost-mod
 import { AddTaskPipelineModalComponent } from './components/add-task-pipeline-modal/add-task-pipeline-modal.component';
 import { AddPocModalComponent } from './components/add-poc-modal/add-poc-modal.component';
 import { ViewPoclistModalComponent } from './components/view-poclist-modal/view-poclist-modal.component';
-// import { OpportunityDetailsModalComponent } from './components/opportunity-details-modal/opportunity-details-modal.component';
+import { AddLeadComponent } from './components/add-lead/add-lead.component';
+import { AddToPresalesModalComponent } from './components/add-to-presales-modal/add-to-presales-modal.component';
+import { ShowTaskModalComponent } from './components/show-task-modal/show-task-modal.component';
+import { EditTilesModalComponent } from './components/edit-tiles-modal/edit-tiles-modal.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { AssignLeadModalComponent } from './components/assign-lead-modal/assign-lead-modal.component';
 
 @NgModule({
   declarations: [
@@ -114,7 +120,12 @@ import { ViewPoclistModalComponent } from './components/view-poclist-modal/view-
     AddTaskPipelineModalComponent,
     AddPocModalComponent,
     ViewPoclistModalComponent,
-    // OpportunityDetailsModalComponent,
+    AddLeadComponent,
+    AddToPresalesModalComponent,
+    ShowTaskModalComponent,
+    EditTilesModalComponent,
+    SettingsComponent,
+    AssignLeadModalComponent   
   ],
   imports: [
     CommonModule,
@@ -128,6 +139,7 @@ import { ViewPoclistModalComponent } from './components/view-poclist-modal/view-
     NgxPermissionsModule,
     GooglePlaceModule,
     OwlDateTimeModule,
+    NgxChartsModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
@@ -161,6 +173,7 @@ import { ViewPoclistModalComponent } from './components/view-poclist-modal/view-
     OwlDateTimeModule,
     FlatpickrModule,
     CalendarModule,
+    NgxChartsModule,
     ThreeDecimalNumberDirective,
     TopNavComponent,
     BelowTopNavComponent,
@@ -181,6 +194,7 @@ import { ViewPoclistModalComponent } from './components/view-poclist-modal/view-
     OrderByPipe,
     AscendingPipe,
     ConfigComponent,
+    SettingsComponent
   ],
   entryComponents: [
     ConfirmDialogComponent,
@@ -191,6 +205,12 @@ import { ViewPoclistModalComponent } from './components/view-poclist-modal/view-
     AddTaskPipelineModalComponent,
     AddPocModalComponent,
     ViewPoclistModalComponent,
+    AddLeadComponent,
+    AddToPresalesModalComponent,
+    ShowTaskModalComponent,
+    EditTilesModalComponent,
+    SettingsComponent,
+    AssignLeadModalComponent
   ]
 })
 export class CoreModule {

@@ -1,0 +1,84 @@
+<loading [state]="loading"> 
+    <div class="modal-content">  
+      <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Tasks</h4>
+      <button type="button" class="close" (click)="close(false)">×</button>
+    </div>
+    <!-- Modal body -->     
+        <div class="modal-body">
+            <!-- <button type="button" class="close" (click)="close(false)">×</button><br> -->
+            <div class="modal-body-container-simple">
+                <div class="row" *ngIf="!showForm">
+                    <div class="col-sm-12 col-xs-12">
+                        <label>Call customer at 13:00 pm</label>
+                    </div>
+                    <div class="col-sm-12 col-xs-12">
+                        <label>Date: 12/06/2020 Time 06:00pm</label>
+                    </div>
+                    <div class="col-sm-6 col-xs-6">
+                        <a><label class="color-anchor">Mark as completed</label></a>
+                    </div>
+                    <div class="col-sm-6 col-xs-6">
+                        <a (click)="reschedule()"><label class="color-anchor">Reschedule</label></a>
+                    </div>
+                    <div class="col-sm-12 col-xs-12"><hr></div>
+                    <div class="col-sm-12 col-xs-12">
+                        <label>Call customer at 13:00 pm</label>
+                    </div>
+                    <div class="col-sm-12 col-xs-12">
+                        <label>Date: 12/06/2020 Time 06:00pm</label>
+                    </div>
+                    <div class="col-sm-6 col-xs-6">
+                        <a><label class="color-anchor">Mark as completed</label></a>
+                    </div>
+                    <div class="col-sm-6 col-xs-6">
+                        <a (click)="reschedule()"><label class="color-anchor">Reschedule</label></a>
+                    </div>
+                </div>
+                
+                    <form [formGroup]="form" *ngIf="showForm">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12 text-center">
+                                <h4>Reschedule</h4>
+                              </div>
+                          <div class="col-sm-12 col-xs-12">
+                            <label>Date :</label>
+                          </div>
+                          <div class="col-sm-12 col-xs-12">
+                            <div class="form-group">
+                              <input class="form-control" formControlName="date" placeholder=""
+                                [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1"
+                                [ngClass]="displayFieldCss(form,'date')" (dateTimeChange)="formatHandler()">
+                                <i class="fa fa-calendar icon-on-input" aria-hidden="true"></i>
+                
+                              <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+                              <div class="invalid-feedback" *ngIf="isFieldValid(form,'date')">Please Select Date</div>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 col-xs-12">
+                            <label>Time :</label>
+                          </div>
+                          <div class="col-sm-12 col-xs-12">
+                            <div class="form-group">
+                              <input class="form-control" formControlName="time" placeholder=""
+                                [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2"
+                                [ngClass]="displayFieldCss(form,'time')">
+                              <owl-date-time #dt2 [pickerType]="'timer'"></owl-date-time>
+                              <div class="invalid-feedback" *ngIf="isFieldValid(form,'time')">Please Select Time</div>
+                            </div>
+                          </div>
+                  
+                        </div>
+                          
+                        <div class="row">
+                          <div class="col-sm-12 col-xs-12 text-center">
+                            <button type="button" class="btn btn-primary modal-save-btn" (click)="submit()">SAVE</button>
+                            <button type="button" class="btn btn-danger modal-cancel-btn" (click)="closeform()">CANCEL</button>
+                          </div>
+                        </div> 
+                      </form>
+            </div>
+        </div>
+    </div>
+    </loading>

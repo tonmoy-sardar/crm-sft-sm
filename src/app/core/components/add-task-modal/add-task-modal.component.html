@@ -7,7 +7,7 @@
     <!-- Modal body -->
     <div class="modal-body">
         <div class="modal-body-container">
-      <form [formGroup]="form">
+      <form [formGroup]="form" (ngSubmit)="formSubmit()">
         <div class="row">
           <div class="col-sm-3 col-xs-3">
             <label>Task Name :</label>
@@ -61,7 +61,7 @@
           
         <div class="row">
           <div class="col-sm-12 col-xs-12 text-center">
-            <button type="button" class="btn btn-primary modal-save-btn" (click)="submit()">SAVE</button>
+            <button type="submit" class="btn btn-primary modal-save-btn" >SAVE</button>
             <button type="button" class="btn btn-danger modal-cancel-btn" (click)="close(false)">CANCEL</button>
           </div>
         </div> 

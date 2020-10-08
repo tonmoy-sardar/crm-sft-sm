@@ -21,6 +21,16 @@
             </div>
           </div>
           <div class="col-sm-4 col-xs-4">
+            <label>GSTIN :</label>
+          </div>
+          <div class="col-sm-8 col-xs-8">
+            <div class="form-group">
+              <input class="form-control" formControlName="gstin" placeholder=""
+                [ngClass]="displayFieldCss(form,'gstin')">
+             <div class="invalid-feedback" *ngIf="isFieldValid(form,'gstin')">Please Enter GSTIN</div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-4">
             <label>CIN :</label>
           </div>
           <div class="col-sm-8 col-xs-8">
@@ -40,16 +50,7 @@
              <div class="invalid-feedback" *ngIf="isFieldValid(form,'pan')">Please Enter PAN</div>
             </div>
           </div>
-          <div class="col-sm-4 col-xs-4">
-            <label>GSTIN :</label>
-          </div>
-          <div class="col-sm-8 col-xs-8">
-            <div class="form-group">
-              <input class="form-control" formControlName="gstin" placeholder=""
-                [ngClass]="displayFieldCss(form,'gstin')">
-             <div class="invalid-feedback" *ngIf="isFieldValid(form,'gstin')">Please Enter GSTIN</div>
-            </div>
-          </div>
+          
           <div class="col-sm-4 col-xs-4">
             <label>Opportunity Name :</label>
           </div>
@@ -90,15 +91,15 @@
           </div>
 
           <div class="col-sm-4 col-xs-4">
-            <label>Engearment :</label>
+            <label>Engagement :</label>
           </div>
           <div class="col-sm-8 col-xs-8">
             <div class="form-group">
-                <ng-select class="form-control form-control2 top-search" formControlName="engearment" 
-                [ngClass]="displayFieldCss(form,'engearment')" placeholder="Please select">
+                <ng-select class="form-control form-control2 top-search" formControlName="engagement" 
+                [ngClass]="displayFieldCss(form,'engagement')" placeholder="Please select">
                     <ng-option>Fixed Cost</ng-option>
                 </ng-select>
-              <div class="invalid-feedback" *ngIf="isFieldValid(form,'engearment')">Please Select Engearment</div>
+              <div class="invalid-feedback" *ngIf="isFieldValid(form,'engagement')">Please Select Engagement</div>
             </div>
           </div>
           <div class="col-sm-4 col-xs-4">
@@ -148,7 +149,7 @@
           </div>
           <div class="col-sm-8 col-xs-8">
             <div class="form-group">
-              <input class="form-control" formControlName="value" placeholder=""
+              <input class="form-control" formControlName="value" placeholder="" appNumber
                 [ngClass]="displayFieldCss(form,'value')">
              <div class="invalid-feedback" *ngIf="isFieldValid(form,'value')">Please Enter Value</div>
             </div>
@@ -176,33 +177,48 @@
             <div class="col-sm-3 col-xs-3">
                 <label><b>POC Name</b></label>
             </div>
+            <div class="col-sm-1 col-xs-1"></div>
             <div class="col-sm-3 col-xs-3">
                 <label><b>Email ID</b></label>
             </div>
-            <div class="col-sm-3 col-xs-3">
+            <div class="col-sm-2 col-xs-2">
                 <label><b>Contact Number</b></label>
             </div>
-            <div class="col-sm-3 col-xs-3">
+            <div class="col-sm-2 col-xs-2">
                 <label><b>Job Title</b></label>
             </div>
+            <div class="col-sm-1 col-xs-1"></div>
         </div>
-        <div class="row">
+        
+        <div class="row" *ngFor="let list of pocList;let i = index">
             <div class="col-sm-3 col-xs-3">
-                <label>Bubai DAs</label>
+              <label>{{list.name}}</label>              
             </div>
-            <div class="col-sm-3 col-xs-3">
-                <label>test@test.com</label>
-            </div>
-            <div class="col-sm-3 col-xs-3">
-                <label>999 999 9999</label>
-            </div>
-            <div class="col-sm-3 col-xs-3">
-                <label>PEO</label> <span class="rid-row"><i class="fa fa-minus-circle" aria-hidden="true"></i>
-                </span>
-            </div>
+            <div class="col-sm-1 col-xs-1">
+              <div class="dragtag" *ngIf="i==0" (drop)="drop($event)" (dragover)="allowDrop($event)">
+                <span class="rid-row" draggable="true" id="drag1" (dragstart)="drag($event)" >Primary</span>
+              </div>
+              <div class="dragtag" *ngIf="i > 0" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
 
+            </div>
+            <div class="col-sm-3 col-xs-3">
+                <label>{{list.email}}</label>
+            </div>
+            <div class="col-sm-2 col-xs-2">
+                <label>{{list.phone}}</label>
+            </div>
+            <div class="col-sm-2 col-xs-2">
+                <label>PEO</label> 
+            </div>
+            <div class="col-sm-1 col-xs-1">
+              <span class="rid-row"><i class="fa fa-minus-circle" aria-hidden="true"></i>
+              </span>
+            </div>
+        </div>
+        
+        <div class="row">
             <div class="col-sm-12 col-xs-12 text-right">
-                <button class="btn btn-primary blue-btn">ADD NEW POC</button>
+                <button class="btn btn-primary blue-btn" (click)="addPOC()">ADD NEW POC</button>
             </div>
         </div>
     </div>

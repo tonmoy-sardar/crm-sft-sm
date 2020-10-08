@@ -18,10 +18,18 @@ export class ListComponent implements OnInit {
   ngOnInit() {
   }
 
+  getConfigData(data){
+    // this.headerThOption = data
+  }
+
+  openSettings(){
+    this.router.navigateByUrl('/settings');
+  }
+
   addPOC() {
     let dialogRef = this.dialog.open(AddPocModalComponent, {
       backdropClass: 'popupBackdropClass',
-      width: '525px',
+      width: '610px',
     });
     dialogRef.afterClosed().subscribe(result => {
       if(result == true){

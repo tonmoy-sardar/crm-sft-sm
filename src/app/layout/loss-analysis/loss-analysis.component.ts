@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loss-analysis',
@@ -7,9 +8,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LossAnalysisComponent implements OnInit {
 
-  constructor() { }
+  saleData: any = [];
+  viewHW = [];
+  from_date: string;
+  to_date: string;
+  selectedEmployee = 'all';
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.saleData = [
+      { name: "Jan", value: 3 },
+      { name: "Feb", value: 4 },
+      { name: "Mar", value: 2 },
+      { name: "Apr", value: 3 },
+      { name: "May", value: 8 },
+      { name: "Jun", value: 10 },
+      { name: "Jul", value: 6 },
+      { name: "Aug", value: 1 },
+      { name: "Sep", value: 7 },
+      { name: "Oct", value: 8 },
+      { name: "Nov", value: 4 },
+      { name: "Dec", value: 7 }
+    ];
+    this.viewHW = [800, 400];
   }
 
+  fromDateReset(){
+    this.from_date = null;
+  }
+
+  toDateReset(){
+    this.to_date = null;
+  }
+
+  openSettings(){
+    this.router.navigateByUrl('/settings');
+  }
 }

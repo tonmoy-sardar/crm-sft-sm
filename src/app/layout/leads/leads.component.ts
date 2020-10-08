@@ -1,43 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AddTaskModalComponent } from '../../core/components/add-task-modal/add-task-modal.component';
-import { AddOpportunityModalComponent } from '../../core/components/add-opportunity-modal/add-opportunity-modal.component';
+import { Component, OnInit, Output,EventEmitter, ViewChild } from '@angular/core';
+import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-leads',
   templateUrl: './leads.component.html',
   styleUrls: ['./leads.component.scss']
 })
-export class LeadsComponent implements OnInit {
+export class LeadsComponent implements OnInit {  
+  @ViewChild('ctdTabset',{static: true}) ctdTabset;
+  activeTab = 'assigned_leads';
 
-  constructor(
-    public dialog: MatDialog,
-  ) { }
+  constructor() { }
 
   ngOnInit() {
 
   }
 
-  addTask(){
-
-    let dialogRef = this.dialog.open(AddTaskModalComponent, {
-      backdropClass: 'popupBackdropClass',
-      width: '525px'
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      if(result == true){
-      }
-    })
-
+  ngAfterViewInit() {
+    this.switchNgBTab(this.activeTab);
   }
 
-  addOpportunity(){
-    let dialogRef = this.dialog.open(AddOpportunityModalComponent, {
-      width: '625px',
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      if(result == true){
-      }
-    })
+  switchNgBTab(id: string) {
+    this.ctdTabset.select(id);
+  }
+
+  onTabChange($event: NgbTabChangeEvent) {
+    this.activeTab = $event.nextId;
+    
   }
 }
