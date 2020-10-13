@@ -31,6 +31,10 @@ export class LeadPoolComponent implements OnInit {
 
   }
 
+  check(e) {
+    
+  }
+
   // addTask(){
   //   let dialogRef = this.dialog.open(AddTaskModalComponent, {
   //     backdropClass: 'popupBackdropClass',

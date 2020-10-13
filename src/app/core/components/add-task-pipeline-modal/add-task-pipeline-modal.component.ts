@@ -38,6 +38,10 @@ export class AddTaskPipelineModalComponent implements OnInit {
   close(key: boolean) {
     this.dialogRef.close(key);
   }
+
+  submit() {
+    
+  }
   
   markFormGroupTouched(formGroup: FormGroup) {
     (<any>Object).values(formGroup.controls).forEach(control => {

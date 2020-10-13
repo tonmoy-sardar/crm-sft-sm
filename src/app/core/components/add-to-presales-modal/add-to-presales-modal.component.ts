@@ -53,6 +53,10 @@ export class AddToPresalesModalComponent implements OnInit {
   clear(item:any){
 
   }
+
+  onSelectFile(e) {
+
+  }
   
   markFormGroupTouched(formGroup: FormGroup) {
     (<any>Object).values(formGroup.controls).forEach(control => {

@@ -52,6 +52,14 @@ export class AddOpportunityModalComponent implements OnInit {
 
   }
 
+  close(flag){
+    this.dialogRef.close(flag)
+  }
+
+  submit() {
+    
+  }
+
   addPOC() {
     let dialogRef = this.dialog.open(AddPocModalComponent, {
       backdropClass: 'popupBackdropClass',

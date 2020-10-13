@@ -14,7 +14,7 @@
           <div class="col-sm-8 col-xs-8">
             <div class="form-group">
               <ng-select class="form-control form-control2 top-search" formControlName="prospecting" 
-                [ngClass]="displayFieldCss(form,'prospecting')" placeholder="Team Member Name">
+                [ngClass]="displayFieldCss(form,'prospecting')" placeholder="Madhuparna" [disabled]="true">
                     <ng-option>Madhuparna</ng-option>
                 </ng-select>
              <div class="invalid-feedback" *ngIf="isFieldValid(form,'prospecting')">Please Select Team Member Name</div>
@@ -241,7 +241,7 @@
             <div class="form-group">
               <input class="form-control" formControlName="start_date" placeholder="DD/MM/YYYY"
                 [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1"
-                [ngClass]="displayFieldCss(form,'start_date')" (dateTimeChange)="formatHandler()">
+                [ngClass]="displayFieldCss(form,'start_date')" (dateTimeChange)="formatHandler($event)">
                 <i class="fa fa-calendar icon-on-input" aria-hidden="true" style="right: 15px;"></i>
 
               <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>

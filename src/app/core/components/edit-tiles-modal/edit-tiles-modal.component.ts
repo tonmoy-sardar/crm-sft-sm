@@ -34,6 +34,10 @@ export class EditTilesModalComponent implements OnInit {
   close(key: boolean) {
     this.dialogRef.close(key);
   }
+
+  submit() {
+    
+  }
   
   
   markFormGroupTouched(formGroup: FormGroup) {

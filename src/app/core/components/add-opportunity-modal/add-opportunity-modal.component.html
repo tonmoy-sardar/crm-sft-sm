@@ -69,7 +69,7 @@
             <div class="form-group">
               <input class="form-control" formControlName="opportunity_date" placeholder="DD/MM/YYYY"
                 [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1"
-                [ngClass]="displayFieldCss(form,'opportunity_date')" (dateTimeChange)="formatHandler()">
+                [ngClass]="displayFieldCss(form,'opportunity_date')" (dateTimeChange)="formatHandler($event)">
                 <i class="fa fa-calendar icon-on-input" aria-hidden="true" style="right: 15px;"></i>
 
               <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>

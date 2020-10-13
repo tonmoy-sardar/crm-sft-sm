@@ -48,4 +48,8 @@ export class CloseWonComponent implements OnInit {
     this.router.navigateByUrl('/settings');
   }
 
+  formatHandler(e) {
+    
+  }
+
 }

@@ -13,7 +13,7 @@ export class BelowTopNavComponent implements OnInit {
   @Output() public emitLead = new EventEmitter<any>();
   @Output() public emitSearch = new EventEmitter<any>();
   @Output() public emitFilterData = new EventEmitter<any>();
-  @Input() currentTab:number;
+  @Input() currentTab: string;
 
   search_key = ''
   selectedEmployee:any = 'all';

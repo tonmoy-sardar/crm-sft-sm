@@ -47,4 +47,8 @@ export class LossAnalysisComponent implements OnInit {
   openSettings(){
     this.router.navigateByUrl('/settings');
   }
+
+  formatHandler(e) {
+    
+  }
 }

@@ -10,6 +10,8 @@ export class ReportComponent implements OnInit {
   @ViewChild('ctdTabset',{static: true}) ctdTabset;
   activeTab = 'lead_report';
 
+  search_key='';
+
   constructor() { }
 
   ngOnInit() {
@@ -25,6 +27,10 @@ export class ReportComponent implements OnInit {
 
   onTabChange($event: NgbTabChangeEvent) {
     this.activeTab = $event.nextId;
+    
+  }
+
+  submit() {
     
   }
 
