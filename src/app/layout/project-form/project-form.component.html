@@ -13,11 +13,13 @@
           </div>
           <div class="col-sm-8 col-xs-8">
             <div class="form-group">
-              <ng-select class="form-control form-control2 top-search" formControlName="prospecting" 
+              <input class="form-control form-control2 top-search" formControlName="prospecting" 
+              [ngClass]="displayFieldCss(form,'prospecting')" placeholder="Manojit" readonly>
+              <!-- <ng-select class="form-control form-control2 top-search" formControlName="prospecting" 
                 [ngClass]="displayFieldCss(form,'prospecting')" placeholder="Madhuparna" [disabled]="true">
                     <ng-option>Madhuparna</ng-option>
-                </ng-select>
-             <div class="invalid-feedback" *ngIf="isFieldValid(form,'prospecting')">Please Select Team Member Name</div>
+                </ng-select> -->
+             <!-- <div class="invalid-feedback" *ngIf="isFieldValid(form,'prospecting')">Please Select Team Member Name</div> -->
             </div>
           </div>
           <div class="col-sm-4 col-xs-4">
@@ -303,7 +305,7 @@
           <div class="col-sm-4 col-xs-4">
             <label>Total Cost<span class="required">*</span> :</label>
           </div>
-          <div class="col-sm-3 col-xs-3">
+          <div class="col-sm-8 col-xs-8">
             <div class="form-group">
               <input class="form-control" formControlName="total_cost" placeholder="" 
                 [ngClass]="displayFieldCss(form,'total_cost')">
