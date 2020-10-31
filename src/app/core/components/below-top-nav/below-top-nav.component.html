@@ -1,26 +1,73 @@
 <div class="container-fluid below-top-bar-lead">
-    <div class="row">
-        <div class="col-lg-8">
-                <!-- <form (ngSubmit)="submit()">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for a lead" [(ngModel)]="search_key" [ngModelOptions]="{standalone: true}">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary top-form-btn" type="submit" >Search</button>
-                      </span>
+    <div class="row" *ngIf="currentTab == 'my_pipeline'">
+        <div class="col-lg-10"></div>
+        <div class="col-lg-2 team-members">
+            <ng-select class="form-control form-control2 top-search" [(ngModel)]="selectedEmployee" placeholder="Select Employee" [clearable]="false">
+                <ng-option value="all">All</ng-option>
+                <ng-option value="Madhuparna">Madhuparna</ng-option>
+            </ng-select>
+        </div>
+    </div>
+    <div class="row" *ngIf="currentTab == 'pipeline_snapshot'">
+        <div class="col-lg-3"></div>            
+        <div class="col-lg-2">
+            <form (ngSubmit)="submit()" >
+                <div class="input-group pull-right">
+                    <input class="form-control" type="text" placeholder="Search" [(ngModel)]="search_key"
+                        [ngModelOptions]="{standalone: true}">
+                    <!-- <span class="input-group-btn"> -->
+                        <button class="btn search-btn btn-primary" type="submit">Search</button>
+                    <!-- </span> -->
                 </div>
-                </form> -->
+            </form> 
         </div>
-        <div class="col-lg-2 text-right" *ngIf="currentTab == 'my_pipeline' || currentTab == 'pipeline_snapshot'">
+        <div class="col-lg-2 text-right">
             
-        </div>              
-        <div class="col-lg-4  text-right" *ngIf="currentTab == 'lead_pool'">
-            <button (click)="addLead()" class="btn main-btn btn-primary">Add Lead</button>
-            <button (click)="assignLead()" class="btn main-btn btn-primary">Assign Lead</button>
+            <div class="custom_date_picker_form_control nopadding">
+                <input class="form-control" (dateTimeChange)="formatHandler($event)" [owlDateTime]="dt1" [selectMode]="'range'"
+                  [owlDateTimeTrigger]="dt1" placeholder="From Date to To Date" [(ngModel)]="dateRange">
+                <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+                <i class="fa fa-calendar-o range-icon" aria-hidden="true" [owlDateTimeTrigger]="dt1"
+                  *ngIf="dateRange==null" title="Open"></i>
+                <i class="fa fa-calendar-times-o range-icon range-icon" aria-hidden="true"
+                  (click)="dateTimeReset()" *ngIf="dateRange!=null" title="Close"></i>                
+              </div>
         </div>
-        <div class="col-lg-2 text-right" *ngIf="currentTab == 'assigned_leads'">
-            <button (click)="addLead()" class="btn main-btn btn-primary">Add Lead</button>
-        </div> 
-        <div class="col-lg-2 team-members" *ngIf="currentTab !== 'lead_pool'">
+        <div class="col-lg-3 ">
+            <button class="btn pdf-btn">Export to PDF</button>&nbsp;
+            <button class="btn excel-btn">Export to Excel</button>&nbsp;
+        </div>              
+        <div class="col-lg-2 team-members">
+            <ng-select class="form-control form-control2 top-search" [(ngModel)]="selectedEmployee" placeholder="Select Employee" [clearable]="false">
+                <ng-option value="all">All</ng-option>
+                <ng-option value="Madhuparna">Madhuparna</ng-option>
+            </ng-select>
+        </div>
+    </div>
+    <div class="row" *ngIf="currentTab == 'lead_pool' || currentTab == 'assigned_leads'">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-3 pull-right">
+            <form (ngSubmit)="submit()" >
+                <div class="input-group pull-right">
+                    <input class="form-control" type="text" placeholder="Search" [(ngModel)]="search_key"
+                        [ngModelOptions]="{standalone: true}">
+                    <!-- <span class="input-group-btn"> -->
+                        <button class="btn search-btn btn-primary" type="submit">Search</button>
+                    <!-- </span> -->
+                </div>
+            </form> 
+        </div>
+        <div class="col-lg-3 text-right">
+            <mat-radio-group (change)="radioChange($event)" [(ngModel)]="origin">
+                <mat-radio-button value="indian">Indian</mat-radio-button>
+                <mat-radio-button value="global">Global</mat-radio-button>
+            </mat-radio-group>
+            <button (click)="addLead()" class="btn main-btn btn-primary">Add Leads</button>
+        </div>                     
+        <div class="col-lg-2 text-right" *ngIf="currentTab == 'lead_pool'">       
+            <button (click)="assignLead()" class="btn main-btn btn-primary" [disabled]="!checked">Assign Leads</button>
+        </div>         
+        <div class="col-lg-2 team-members" *ngIf="currentTab == 'assigned_leads'">            
             <ng-select class="form-control form-control2 top-search" [(ngModel)]="selectedEmployee" placeholder="Select Employee" [clearable]="false">
                 <ng-option value="all">All</ng-option>
                 <ng-option value="Madhuparna">Madhuparna</ng-option>

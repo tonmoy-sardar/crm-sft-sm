@@ -9,6 +9,7 @@ import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 export class LeadsComponent implements OnInit {  
   @ViewChild('ctdTabset',{static: true}) ctdTabset;
   activeTab = 'assigned_leads';
+  checkBox = false;
 
   constructor() { }
 
@@ -25,7 +26,10 @@ export class LeadsComponent implements OnInit {
   }
 
   onTabChange($event: NgbTabChangeEvent) {
-    this.activeTab = $event.nextId;
-    
+    this.activeTab = $event.nextId;    
+  }
+
+  ongetcheckbox(e){    
+    this.checkBox = e;
   }
 }

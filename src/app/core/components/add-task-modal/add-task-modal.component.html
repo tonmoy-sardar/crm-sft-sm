@@ -3,6 +3,7 @@
     <!-- Modal Header -->
     <div class="modal-header">
       <h4 class="modal-title">Add Task</h4>
+      <button type="button" class="close" (click)="close(false)">×</button>
     </div>
     <!-- Modal body -->
     <div class="modal-body">
@@ -24,7 +25,7 @@
           </div>
           <div class="col-sm-4 col-xs-4">
             <div class="form-group">
-              <input class="form-control" formControlName="date" placeholder=""
+              <input class="form-control" formControlName="date" placeholder="dd/mm/yyyy"
                 [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1"
                 [ngClass]="displayFieldCss(form,'date')" (dateTimeChange)="formatHandler($event)">
                 <i class="fa fa-calendar icon-on-input" aria-hidden="true"></i>
@@ -38,7 +39,7 @@
           </div>
           <div class="col-sm-3 col-xs-3">
             <div class="form-group">
-              <input class="form-control" formControlName="time" placeholder=""
+              <input class="form-control" formControlName="time" placeholder="hh:mm"
                 [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2"
                 [ngClass]="displayFieldCss(form,'time')">
               <owl-date-time #dt2 [pickerType]="'timer'"></owl-date-time>
@@ -60,7 +61,7 @@
         </div>
           
         <div class="row">
-          <div class="col-sm-12 col-xs-12 text-center">
+          <div class="col-sm-12 col-xs-12 text-right">
             <button type="submit" class="btn btn-primary modal-save-btn" >SAVE</button>
             <button type="button" class="btn btn-danger modal-cancel-btn" (click)="close(false)">CANCEL</button>
           </div>

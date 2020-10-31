@@ -14,9 +14,12 @@ export class BelowTopNavComponent implements OnInit {
   @Output() public emitSearch = new EventEmitter<any>();
   @Output() public emitFilterData = new EventEmitter<any>();
   @Input() currentTab: string;
+  @Input() checked: boolean;
 
-  search_key = ''
+  search_key='';
   selectedEmployee:any = 'all';
+  origin = 'indian';
+  dateRange=null;
   constructor(public dialog: MatDialog,) { }
 
   ngOnInit() {
@@ -58,5 +61,17 @@ export class BelowTopNavComponent implements OnInit {
 
   filterLead(event){
     this.emitFilterData.emit(event)
+  }
+
+  radioChange(e){
+
+  }
+
+  formatHandler(e){
+
+  }
+
+  dateTimeReset(){
+    this.dateRange = null;
   }
 }

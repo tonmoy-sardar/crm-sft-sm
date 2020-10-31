@@ -5,7 +5,10 @@
                 <table class="table table-bordered table-striped table-hover custom-table">
                     <thead class="thead-dark blue-thead">
                         <tr>                            
-                            <th scope="col"></th>
+                            <th class="text-right allcheck">
+                                <mat-checkbox class="example-margin" value="all" title="Select All" [(ngModel)]="checked"
+                                  (change)="checkedAll($event)"></mat-checkbox>
+                              </th>
                             <th scope="col">Business Name</th>
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
@@ -16,171 +19,20 @@
                         </tr>
                     </thead>
                     <tbody class="single-border-td">
-                        <tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
+                        <tr [class.active_row]="checkedRow[i].checked==true"
+                        *ngFor="let lead of leadList; let i=index;">                            
+                            <td class="text-right">
+                                <mat-checkbox class="example-margin" [value]="i" [(ngModel)]="checkedRow[i].checked"
+                                (change)="checkedThisRow(i,$event)"></mat-checkbox>
                             </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr>
-                        <tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr>
-                        <tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr>
-                        <tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr>
-                        <tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr>
-                        <tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr>
-                        <tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr>
-                        <tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr>
-                        <tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr>
-                        <tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr><tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr><tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr><tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr>
-                        <tr>                            
-                            <td>
-                                <mat-checkbox class="example-margin" (change)="check($event)"></mat-checkbox>
-                            </td>
-                            <td>KGDF Bank</td>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>USA</td>
-                            <td>2314784209</td>
-                            <td>john@gmail.com</td>
-                            <td>Facebook</td>                                                        
-                        </tr>                                          
+                            <td>{{lead.business_name}}</td>
+                            <td>{{lead.first_name}}</td>
+                            <td>{{lead.last_name}}</td>
+                            <td>{{lead.country}}</td>
+                            <td>{{lead.contact_number}}</td>
+                            <td>{{lead.email_id}}</td>
+                            <td>{{lead.source}}</td>                                                        
+                        </tr>                                                               
                     </tbody>
                 </table>
             </div>

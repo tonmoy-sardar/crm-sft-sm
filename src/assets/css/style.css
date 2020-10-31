@@ -595,9 +595,18 @@ thead.blue-thead tr th {
     margin: 0px 20px;
     padding: 8px;
 }
+.below-top-bar-lead .mat-radio-group {
+    padding-right: 26px;
+}
+.below-top-bar-lead .mat-radio-group .mat-radio-label{
+    margin-bottom: 0px;
+}
 .below-top-bar input.form-control {
     margin-top: 6px;
     padding: 12px 8px;
+}
+.below-top-bar .custom_date_picker_form_control input.form-control {
+    margin-top: 0;    
 }
 .below-top-bar button.btn-primary {
     font-size: 11px;
@@ -835,15 +844,22 @@ button.blue-btn {
     padding: 10px;
     box-shadow: 0px 0px 0px 0px rgba(0,0,0,.09), 1px 3px 3px 0px rgba(0,0,0,.7);
     background: #FDFBF7;
-    min-height: 140px;
+    min-height: 165px;
     margin-bottom: 12px;
     margin-top: 12px;
-    border-radius: 10px;
+    border-radius: 10px;    
 }
 .pipeline-process table td, .leads-pane table td.fixed-col  {
     width: 11%;
     word-break: break-word;
     white-space: break-spaces;
+}
+.leads-pane table th:first-child.allcheck {
+    padding-right: 23px !important;
+}
+.leads-pane table th:first-child .mat-checkbox .mat-checkbox-frame {
+    border-color: white !important;
+    background-color: white !important;
 }
 .row.pipeline-process .col-md-2 {
     border-right: 1px solid #dee2e6;
@@ -906,6 +922,10 @@ p.company-value {
 }
 .last-action {
     font-size: 8px;
+    line-height: 1.5;
+}
+.ba-name {
+    color: #1067B1;
 }
 .over-tag{
     font-size: 11px;
@@ -994,6 +1014,9 @@ button.won-btn {
     font-weight: 600;
     background-color: #fff;
 }
+.accounts .row .col-lg-12 {
+    margin: 29px 0px;
+}
 .accounts table {
     width: 95%;
     margin: 30px auto;
@@ -1003,10 +1026,10 @@ button.won-btn {
     background-color: #f2f2f2;
     padding: 12px 10px;
     color: #383737;
-    width: 15%;
+    width: 11%;
 }
 .accounts table th:first-child {
-    width: 16%;
+    width: 12%;
 }
 .accounts table td a.link {
     color: #0e6eff;    
@@ -1016,6 +1039,8 @@ button.won-btn {
     border: #cbcccd 1px solid;
     word-break: break-word;
     white-space: break-spaces;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .accounts .accountrow {
     text-align: left !important;
@@ -1121,10 +1146,10 @@ button.won-btn {
     padding: 18px 10px;
     color: #383737;
     border: #cbcccd 1px solid;
-    width: 25%;
+    width: 18%;
 }
 .close-won table td:nth-child(2) {
-    width: 15%
+    width: 12%
 }
 .settings {
     width: 95%;
@@ -1328,4 +1353,28 @@ span.btn.btn-file {
 
 .required {
     color: red;
+}
+.rag-green {
+    background-color:#197c57;
+    width: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+.rag-red {
+    background-color:#d90000;
+    width: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+.rag-amber {
+    background-color: #FFBF00;
+    width: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+.rag-inactive {
+    background-color: #b2beb5;
+    width: 50%;
+    display: inline-block;
+    margin-right: 5px;
 }

@@ -1,9 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormGroup, Validators, FormBuilder, FormArray, FormControl } from '@angular/forms';
-import { LoadingState } from '../../../core/components/loading/loading.component';
+import { LoadingState } from '../../../../core/components/loading/loading.component';
 import { ToastrService } from 'ngx-toastr';
-import { AddPocModalComponent } from '../../../core/components/add-poc-modal/add-poc-modal.component';
+import { AddPocModalComponent } from '../../../../core/components/add-poc-modal/add-poc-modal.component';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { OwlDateTimeComponent, DateTimeAdapter, OWL_DATE_TIME_FORMATS, OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
 import * as _moment from 'moment';
@@ -18,17 +18,14 @@ export const MY_MOMENT_DATE_TIME_FORMATS = {
   dateA11yLabel: 'LL',
   monthYearA11yLabel: 'MMMM YYYY',
 };
-import { SettingService } from '../../services/setting.service';
-import { RemarksLogModalComponent } from '../../components/remarks-log-modal/remarks-log-modal.component';
+import { SettingService } from '../../../services/setting.service';
+import { RemarksLogModalComponent } from '../../../../core/components/remarks-log-modal/remarks-log-modal.component';
 @Component({
-  selector: 'app-add-opportunity-modal',
-  templateUrl: './add-opportunity-modal.component.html',
-  styleUrls: ['./add-opportunity-modal.component.scss'],
-  // providers: [
-  //   { provide: OWL_DATE_TIME_FORMATS, useValue: MY_MOMENT_DATE_TIME_FORMATS },
-  // ]
+  selector: 'app-opportunity-details',
+  templateUrl: './opportunity-details.component.html',
+  styleUrls: ['./opportunity-details.component.scss']
 })
-export class AddOpportunityModalComponent implements OnInit {
+export class OpportunityDetailsComponent implements OnInit {
 
   form: FormGroup;
   pocList = [
@@ -38,10 +35,8 @@ export class AddOpportunityModalComponent implements OnInit {
   loading: LoadingState = LoadingState.NotReady;
   public closure_date = new FormControl(moment());
   public opportunity_date: any;
- 
-  constructor(
-    public dialogRef: MatDialogRef<AddOpportunityModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
+
+  constructor(   
     private formBuilder: FormBuilder,
     private settingService: SettingService,
     public dialog: MatDialog
@@ -49,27 +44,28 @@ export class AddOpportunityModalComponent implements OnInit {
 
   ngOnInit() {
     var today = new Date();
+    var closure = new Date('January 20, 2021')
     this.form = this.formBuilder.group({
       origin: ['indian', Validators.required],
       business_name: ['KGDF Bank', Validators.required],
-      business_website: [null],
+      business_website: ['www.google.com'],
       cin: [null],
       pan: [null],
       gstin: [null],
       source: ['Facebook', Validators.required],      
       account_manager: ['Manojit', Validators.required],
-      project_manager: [null],
-      department: [null, Validators.required],
-      technology: [null, Validators.required],
-      opportunity:  [null, Validators.required],
+      project_manager: ['Biswa'],
+      department: ['Web Design', Validators.required],
+      technology: ['IT', Validators.required],
+      opportunity:  ['App Design', Validators.required],
       opportunity_date: [today, Validators.required],
-      closure_date: [null, Validators.required],
-      engagement: [null],
-      man_hours: [null],
-      deal_value: [null],
-      mode_of_payment: [null],      
-      currency: [null, Validators.required],
-      remarks: [null]
+      closure_date: [closure, Validators.required],
+      engagement: ['Fixed Cost'],
+      man_hours: ['8 hrs'],
+      deal_value: ['107565'],
+      mode_of_payment: ['Paypal'],      
+      currency: ['Dollar', Validators.required],
+      remarks: ['Lorem ipsum is dummy text']
     });
     this.loading = LoadingState.Ready;
   }
@@ -96,16 +92,16 @@ export class AddOpportunityModalComponent implements OnInit {
     }
   }
 
-  close(flag){
-    this.dialogRef.close(flag)
-  }
-
-  submit() {
-    
-  }
-
   radioChange(e){
 
+  }
+
+  submit(){
+
+  }
+
+  close(){
+    
   }
 
   addPOC() {
@@ -164,4 +160,5 @@ export class AddOpportunityModalComponent implements OnInit {
       'is-valid': form.get(field).valid && (form.get(field).dirty || form.get(field).touched)
     };
   }
+
 }

@@ -91,6 +91,11 @@ import { ShowTaskModalComponent } from './components/show-task-modal/show-task-m
 import { EditTilesModalComponent } from './components/edit-tiles-modal/edit-tiles-modal.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AssignLeadModalComponent } from './components/assign-lead-modal/assign-lead-modal.component';
+import { OpportunityCardModalComponent } from './components/opportunity-card-modal/opportunity-card-modal.component';
+import { OpportunityDetailsComponent } from './components/opportunity-tabs/opportunity-details/opportunity-details.component';
+import { PaymentMilestoneComponent } from './components/opportunity-tabs/payment-milestone/payment-milestone.component';
+import { OpportunityDetailsModalComponent } from './components/opportunity-details-modal/opportunity-details-modal.component';
+import { RemarksLogModalComponent } from './components/remarks-log-modal/remarks-log-modal.component';
 
 @NgModule({
   declarations: [
@@ -125,7 +130,12 @@ import { AssignLeadModalComponent } from './components/assign-lead-modal/assign-
     ShowTaskModalComponent,
     EditTilesModalComponent,
     SettingsComponent,
-    AssignLeadModalComponent   
+    AssignLeadModalComponent,
+    OpportunityCardModalComponent,
+    OpportunityDetailsComponent,
+    PaymentMilestoneComponent,
+    OpportunityDetailsModalComponent,
+    RemarksLogModalComponent   
   ],
   imports: [
     CommonModule,
@@ -194,7 +204,9 @@ import { AssignLeadModalComponent } from './components/assign-lead-modal/assign-
     OrderByPipe,
     AscendingPipe,
     ConfigComponent,
-    SettingsComponent
+    SettingsComponent,
+    OpportunityDetailsComponent,
+    PaymentMilestoneComponent
   ],
   entryComponents: [
     ConfirmDialogComponent,
@@ -210,7 +222,10 @@ import { AssignLeadModalComponent } from './components/assign-lead-modal/assign-
     ShowTaskModalComponent,
     EditTilesModalComponent,
     SettingsComponent,
-    AssignLeadModalComponent
+    AssignLeadModalComponent,
+    OpportunityCardModalComponent,
+    OpportunityDetailsModalComponent,
+    RemarksLogModalComponent
   ]
 })
 export class CoreModule {

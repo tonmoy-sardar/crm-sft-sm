@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { AddPocModalComponent } from '../../../core/components/add-poc-modal/add-poc-modal.component';
 import { ViewPoclistModalComponent } from '../../../core/components/view-poclist-modal/view-poclist-modal.component';
 import { Router } from '@angular/router';
+import { OpportunityCardModalComponent } from '../../../core/components/opportunity-card-modal/opportunity-card-modal.component';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -10,12 +11,15 @@ import { Router } from '@angular/router';
 })
 export class ListComponent implements OnInit {
 
+  dialogRef1: MatDialogRef<OpportunityCardModalComponent>;
+
   constructor(
     public dialog: MatDialog,
     private router: Router
   ) { }
 
   ngOnInit() {
+    
   }
 
   getConfigData(data){
@@ -50,6 +54,24 @@ export class ListComponent implements OnInit {
 
   viewOpportunity(id) {
     this.router.navigateByUrl('/accounts/opportunity/' +id);
+  }
+
+  viewOpportunityCard(id){
+    this.dialogRef1 = this.dialog.open(OpportunityCardModalComponent, {
+      backdropClass: 'popupBackdropClass',
+      width: '500px',
+      data: {title: id}
+    });
+    this.dialogRef1.afterClosed().subscribe(result => {
+      if(result == true){
+      }
+    })
+  }
+
+  closeOpportunityCard(id){
+    if(this.dialogRef1.afterOpened){
+      this.dialogRef1.close();
+    }
   }
 
 

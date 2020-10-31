@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { RemarksLogModalComponent } from '../../../../core/components/remarks-log-modal/remarks-log-modal.component';
 
 @Component({
   selector: 'app-pipeline-snapshot',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipelineSnapshotComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit() {
+  }
+
+  editModal(){
+    
+  }
+
+  viewRemarks() {
+    let dialogRef = this.dialog.open(RemarksLogModalComponent, {
+      backdropClass: 'popupBackdropClass',
+      width: '525px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result == true){
+      }
+    })
   }
 
 }

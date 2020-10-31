@@ -6,10 +6,11 @@ import { ReportComponent } from './report.component';
 import { LeadReportComponent } from './lead-report/lead-report.component';
 import { InvoiceReportComponent } from './invoice-report/invoice-report.component';
 import { CustomerReportComponent } from './customer-report/customer-report.component';
+import { ProjectReportComponent } from './project-report/project-report.component';
 
 
 @NgModule({
-  declarations: [ReportComponent, LeadReportComponent, InvoiceReportComponent, CustomerReportComponent],
+  declarations: [ReportComponent, LeadReportComponent, InvoiceReportComponent, CustomerReportComponent, ProjectReportComponent],
   imports: [
     CommonModule,
     ReportRoutingModule,

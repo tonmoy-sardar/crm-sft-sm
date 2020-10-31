@@ -1,7 +1,7 @@
 <div class="tab-pane">
     <div class="container-fluid">
         <!-- <app-settings (click)="openSettings()"></app-settings> -->
-        <app-below-top-nav [currentTab]="activeTab"></app-below-top-nav>
+        <app-below-top-nav [currentTab]="activeTab" [checked]="checkBox"></app-below-top-nav>
     <div class="row">
         <div class="leads col-lg-12">
             <ngb-tabset #ctdTabset="ngbTabset" (tabChange)="onTabChange($event)">
@@ -14,7 +14,7 @@
                 <ngb-tab  id="lead_pool">
                     <ng-template ngbTabTitle>Lead Pool </ng-template>
                     <ng-template ngbTabContent>
-                            <app-lead-pool></app-lead-pool>
+                            <app-lead-pool (checkedBox)="ongetcheckbox($event)"></app-lead-pool>
                     </ng-template>
                 </ngb-tab>
             </ngb-tabset>

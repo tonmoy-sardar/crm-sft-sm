@@ -7,7 +7,8 @@ import { AddTaskPipelineModalComponent } from '../../add-task-pipeline-modal/add
 import { AddToPresalesModalComponent } from '../../add-to-presales-modal/add-to-presales-modal.component';
 import { ShowTaskModalComponent } from '../../show-task-modal/show-task-modal.component';
 import { EditTilesModalComponent } from '../../edit-tiles-modal/edit-tiles-modal.component';
-
+import { OpportunityDetailsModalComponent } from '../../../../core/components/opportunity-details-modal/opportunity-details-modal.component';
+ 
 @Component({
   selector: 'app-my-pipeline',
   templateUrl: './my-pipeline.component.html',
@@ -164,6 +165,17 @@ export class MyPipelineComponent implements OnInit {
     let dialogRef = this.dialog.open(EditTilesModalComponent, {
       backdropClass: 'popupBackdropClass',
       width: '380px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result == true){
+      }
+    })
+  }
+
+  viewOpportunityDetails(){
+    let dialogRef = this.dialog.open(OpportunityDetailsModalComponent, {
+      backdropClass: 'popupBackdropClass',
+      width: '600px',
     });
     dialogRef.afterClosed().subscribe(result => {
       if(result == true){

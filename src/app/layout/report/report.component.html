@@ -1,27 +1,27 @@
 <div class="tab-pane">
     <div class="container-fluid">
-    <div class="container-fluid below-top-bar-lead">
-        <!-- <app-settings (click)="openSettings()"></app-settings> -->
-        <div class="row">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4  text-left">
-                <form (ngSubmit)="submit()">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Search" [(ngModel)]="search_key"
-                            [ngModelOptions]="{standalone: true}">
-                        <!-- <span class="input-group-btn"> -->
+        <div class="container-fluid below-top-bar-lead">
+            <!-- <app-settings (click)="openSettings()"></app-settings> -->
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-3 text-right">
+                    <form (ngSubmit)="submit()">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Search" [(ngModel)]="search_key"
+                                [ngModelOptions]="{standalone: true}">
+                            <!-- <span class="input-group-btn"> -->
                             <button class="btn search-btn btn-primary" type="submit">Search</button>
-                        <!-- </span> -->
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-4 text-right">
-                <button class="btn pdf-btn">Export to PDF</button>&nbsp;
-                <button class="btn excel-btn">Export to Excel</button>&nbsp;
-                <button class="btn main-btn btn-primary">Export to CSV</button>&nbsp;
+                            <!-- </span> -->
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4 text-right">
+                    <button class="btn pdf-btn">Export to PDF</button>&nbsp;
+                    <button class="btn excel-btn">Export to Excel</button>&nbsp;
+                    <button class="btn main-btn btn-primary">Export to CSV</button>&nbsp;
+                </div>
             </div>
         </div>
-    </div>
         <div class="row">
             <div class="leads col-lg-12">
                 <ngb-tabset class="report-tabs" #ctdTabset="ngbTabset" (tabChange)="onTabChange($event)">
@@ -43,9 +43,15 @@
                             <app-customer-report></app-customer-report>
                         </ng-template>
                     </ngb-tab>
+                    <ngb-tab id="project_report">
+                        <ng-template ngbTabTitle>Project Report </ng-template>
+                        <ng-template ngbTabContent>
+                            <app-project-report></app-project-report>
+                        </ng-template>
+                    </ngb-tab>
                 </ngb-tabset>
             </div>
         </div>
-    
-</div>
+
+    </div>
 </div>
